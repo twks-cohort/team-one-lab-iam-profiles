@@ -1,0 +1,4 @@
+fileignoreconfig:
+- filename: op.nonprod.env
+  checksum: d20085cb9e6d8b6c8b9662a13b6ef610643f45d34c3dd542393be20b1343d054
+version: ""
