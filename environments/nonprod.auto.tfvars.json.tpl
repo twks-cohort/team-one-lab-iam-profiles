@@ -8,7 +8,6 @@
   "aws_region": "us-east-2",
   "assume_role": "DPSIamProfilesRole",
   "account_id": "{{ op://empc-lab/aws-dps-2/aws-account-id }}",
-  "prod_account_id": "{{ op://empc-lab/aws-dps-1/aws-account-id }}",
   "nonprod_account_id": "{{ op://empc-lab/aws-dps-2/aws-account-id }}",
   "twdpsio_gpg_public_key_base64": "{{ op://empc-lab/svc-gpg/public-key-base64 }}"
 }
