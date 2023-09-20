@@ -24,19 +24,6 @@ module "DPSNonprodServiceAccountGroup" {
   ]
 }
 
-# members of the prod service account group can assume any role in any production accounts
-module "DPSProdServiceAccountGroup" {
-  count = var.create_iam_profiles ? 1 : 0
-  source  = "terraform-aws-modules/iam/aws//modules/iam-group-with-assumable-roles-policy"
-  version = "~> 5.1"
-
-  name = "DPSProdServiceAccountGroup"
-  assumable_roles = local.all_roles
-  group_users = [
-    module.DPSProdServiceAccount.iam_user_name
-  ]
-}
-
 # platform team members can add themselves to this group to enable the ability
 # to assume any role in any platform account. Where the platform teams individual
 # access is managed through an idp federation then this functionality may need to
