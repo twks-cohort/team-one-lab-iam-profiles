@@ -9,5 +9,5 @@
   "assume_role": "DPSIamProfilesRole",
   "account_id": "{{ op://cohorts/teamone-aws/aws-account-id }}",
   "nonprod_account_id": "{{ op://cohorts/teamone-aws/aws-account-id }}",
-  "twdpsio_gpg_public_key_base64": "{{ op://cohorts/one-svc-gpg-public.key }}"
+  "twdpsio_gpg_public_key_base64": "{{ op://cohorts/one-svc-gpg/base64_public_key }}"
 }
