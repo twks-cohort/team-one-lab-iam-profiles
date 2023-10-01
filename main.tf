@@ -7,7 +7,6 @@ locals {
 
   all_roles = [
     "arn:aws:iam::${var.nonprod_account_id}:role/*",
-    "arn:aws:iam::${var.prod_account_id}:role/*",
   ]
 }
 
@@ -66,28 +65,28 @@ output "DPSNonprodServiceAccount_encrypted_aws_secret_access_key" {
 }
 
 
-# In the simplified model, a single production service account is created since
-# initially a single platform team is responsible for all platform account infrastructure
-module "DPSProdServiceAccount" {
-  create_user = var.create_iam_profiles
-  source  = "terraform-aws-modules/iam/aws//modules/iam-user"
-  version = "~> 5.1"
-
-  name                          = "DPSProdServiceAccount"
-  create_iam_access_key         = true
-  create_iam_user_login_profile = false
-  pgp_key                       = var.twdpsio_gpg_public_key_base64
-  force_destroy                 = true
-  password_reset_required       = false
-}
-
-output "DPSProdServiceAccount_aws_access_key_id" {
-  value = var.create_iam_profiles ? module.DPSProdServiceAccount.iam_access_key_id : ""
-  sensitive   = true
-}
-
-# gpg public key encrypted version of DPSProdServiceAccount aws-secret-access-key
-output "DPSProdServiceAccount_encrypted_aws_secret_access_key" {
-  value = var.create_iam_profiles ? module.DPSProdServiceAccount.iam_access_key_encrypted_secret : ""
-  sensitive   = true
-}
+# # In the simplified model, a single production service account is created since
+# # initially a single platform team is responsible for all platform account infrastructure
+# module "DPSProdServiceAccount" {
+#   create_user = var.create_iam_profiles
+#   source  = "terraform-aws-modules/iam/aws//modules/iam-user"
+#   version = "~> 5.1"
+#
+#   name                          = "DPSProdServiceAccount"
+#   create_iam_access_key         = true
+#   create_iam_user_login_profile = false
+#   pgp_key                       = var.twdpsio_gpg_public_key_base64
+#   force_destroy                 = true
+#   password_reset_required       = false
+# }
+#
+# output "DPSProdServiceAccount_aws_access_key_id" {
+#   value = var.create_iam_profiles ? module.DPSProdServiceAccount.iam_access_key_id : ""
+#   sensitive   = true
+# }
+#
+# # gpg public key encrypted version of DPSProdServiceAccount aws-secret-access-key
+# output "DPSProdServiceAccount_encrypted_aws_secret_access_key" {
+#   value = var.create_iam_profiles ? module.DPSProdServiceAccount.iam_access_key_encrypted_secret : ""
+#   sensitive   = true
+# }

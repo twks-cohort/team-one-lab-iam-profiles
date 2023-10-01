@@ -8,9 +8,9 @@ terraform {
 
   backend "remote" {
     hostname     = "app.terraform.io"
-    organization = "twdps"
+    organization = "twks-cohort"
     workspaces {
-      prefix = "lab-iam-profiles-"
+      prefix = "tone-lab-iam-profiles-"
     }
   }
 }
@@ -28,7 +28,7 @@ provider "aws" {
 
   default_tags {
     tags = {
-      pipeline = "lab-iam-profiles"
+      pipeline = "tone-lab-iam-profiles"
     }
   }
 }

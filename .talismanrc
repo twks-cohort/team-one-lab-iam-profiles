@@ -1,4 +1,8 @@
 fileignoreconfig:
 - filename: op.nonprod.env
-  checksum: d20085cb9e6d8b6c8b9662a13b6ef610643f45d34c3dd542393be20b1343d054
+  checksum: 5b72077e60fd6dc8d1918726bb0b8b64c8d38bc95d1ff45c772b80d3f558a7c8
+- filename: main.tf
+  checksum: da50c9633eaa2ca266cc4f2f896ef1bad100260d6f217094203daf1fd949ac0c
+- filename: environments/nonprod.auto.tfvars.json.tpl
+  checksum: cd37038ee10d8652e9ffcf0d6bd144425558729539d402168cb469dcb198f5b9
 version: ""
