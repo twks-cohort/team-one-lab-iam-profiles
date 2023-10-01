@@ -23,7 +23,7 @@ provider "aws" {
   # secrethub.*.env to contain the appropriate service account identity
   assume_role {
     role_arn     = "arn:aws:iam::${var.aws_account_id}:role/${var.aws_account_role}"
-    session_name = "tone-lab-iam-profiles"
+    session_name = "lab-iam-profiles"
   }
 
   default_tags {
