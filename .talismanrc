@@ -5,4 +5,7 @@ fileignoreconfig:
   checksum: da50c9633eaa2ca266cc4f2f896ef1bad100260d6f217094203daf1fd949ac0c
 - filename: environments/nonprod.auto.tfvars.json.tpl
   checksum: 7b0dc97adb75fff61266b9091182ef2e12e028e6b6ac2959dba0b2ea28c6f75f
+- filename: tpl/private.key.tpl
+  checksum: 8ecbc57585ae6d0ccffa227d54c02c3b03c8c852512e61f6d29b1cfdaab93273
+
 version: ""
